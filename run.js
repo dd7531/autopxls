@@ -18,6 +18,12 @@ function autopxls_loader(){
       x: 60,
       y: 526,
       image: "http://i.imgur.com/mxjxBhS.png"
+    },
+    {
+      title: "PIXELS",
+      x: 248,
+      y: 611,
+      image: "http://i.imgur.com/kjzejr4.png"
     }
   ]
 
