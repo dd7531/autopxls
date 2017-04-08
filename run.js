@@ -21,4 +21,10 @@ var images = [
   }
 ]
 
-AutoPXLS(images);
+var autopxls_script = document.createElement('script');
+autopxls_script.src = "https://rawgit.com/dd7531/autopxls/master/autopxls.js";
+autopxls_script.onload = function () {
+  AutoPXLS(images);
+};
+ 
+document.head.appendChild(autopxls_script);
