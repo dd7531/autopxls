@@ -1,3 +1,4 @@
+// ============================================= configure and run ============
 
 var images = [
   {
@@ -11,6 +12,12 @@ var images = [
     x: 440,
     y: 574,
     image: "http://i.imgur.com/uot63Pq.png" 
+  },
+  {
+    title: "El Gagarino",
+    x: 60,
+    y: 526,
+    image: "http://i.imgur.com/mxjxBhS.png"
   }
 ]
 

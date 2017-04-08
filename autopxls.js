@@ -1,5 +1,29 @@
 
 function AutoPXLS(images){
+//
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+
+  var om = App.socket.onmessage;
+
+  App.socket.onmessage = function(message){
+    var m = JSON.parse(message.data);
+
+    if(m.type == "captcha_required"){
+      if (Notification.permission !== "granted")
+        Notification.requestPermission();
+      else {
+        var notification = new Notification('Notification title', {
+          body: "Hey there! Enter the captcha!",
+        });
+      }
+    }
+
+    om(message);
+  }
+//
+
+
 
   var Painter = function(config){
     var board = document.getElementById("board").getContext('2d');
@@ -80,7 +104,7 @@ function AutoPXLS(images){
 
             var color_id = getColorId(coords);
             if(color_id < 0) continue;
-            
+
             console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
 
             App.switchColor(color_id);
