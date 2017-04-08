@@ -115,6 +115,9 @@ function AutoPXLS(images){
           break;
         }
       }
+      if(color_id < 0)
+        console.log("pixel at x:" + coords.x + " y: " + coords.y + " has incorrect color.");
+      
       return color_id;
     }
 
