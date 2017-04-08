@@ -77,10 +77,11 @@ function AutoPXLS(images){
             //console.log("same color, skip");
           }
           else{
-            console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
 
             var color_id = getColorId(coords);
             if(color_id < 0) continue;
+            
+            console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
 
             App.switchColor(color_id);
             App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
