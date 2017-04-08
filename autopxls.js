@@ -78,7 +78,11 @@ function AutoPXLS(images){
           }
           else{
             console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
-            App.switchColor(getColorId(coords));
+
+            var color_id = getColorId(coords);
+            if(color_id < 0) return 2;
+
+            App.switchColor(color_id);
             App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
             return 20;
           }
@@ -153,3 +157,23 @@ function AutoPXLS(images){
 
   draw();
 }
+
+
+// ============================================= configure and run ============
+
+var images = [
+  {
+    title: "TARDIS",
+    x: 602,
+    y: 463,
+    image: "http://i.imgur.com/wrpOqWw.png" 
+  },
+  {
+    title: "Napoleon RIP",
+    x: 440,
+    y: 574,
+    image: "http://i.imgur.com/uot63Pq.png" 
+  }
+]
+
+AutoPXLS(images);
