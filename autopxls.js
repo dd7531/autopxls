@@ -119,8 +119,8 @@ function AutoPXLS(images){
     }
 
     function tryToDraw(){
-      for(var _x = 0; _x < canvas.width; _x++){
-        for(var _y = 0; _y < canvas.height; _y++){
+      for(var _y = 0; _y < canvas.height; _y++){
+        for(var _x = 0; _x < canvas.width; _x++){
           var coords = {x: _x, y: _y};
 
           if(isSamePixelColor(coords)){
